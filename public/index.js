@@ -4,11 +4,10 @@ import "https://cdnjs.cloudflare.com/ajax/libs/firebase/7.16.0/firebase-database
 import "https://cdnjs.cloudflare.com/ajax/libs/firebase/7.16.1/firebase-auth.min.js";
 import config from "./firebase.js";
 import app from "./F7App.js";
-import "./grocery.js";
+import "./book.js"; // Renamed grocery.js to book.js
 
 firebase.initializeApp(config);
 const $$ = Dom7;
-
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {

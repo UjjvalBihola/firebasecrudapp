@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#2196f3">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
-    <title>House Plant Management</title>
+    <title>Book Collection Manager</title>
     <link rel="apple-touch-icon" href="img/f7-icon-square.png">
     <link rel="icon" href="img/f7-icon.png">
     <link rel="stylesheet" href="./index.css">
@@ -22,7 +22,7 @@
             <div class="page">
                 <nav class="navbar">
                     <div class="navbar-inner">
-                        <h1 class="title sliding">House Plant</h1>
+                        <h1 class="title sliding">Books</h1>
                     </div>
                 </nav>
                 <main class="page-content">
@@ -34,7 +34,7 @@
                                     <a href="#" class="button button-active login-screen-open" data-login-screen=".loginYes">Sign In</a>
                                 </div>
                             </div>
-                            <p>This is House Plant for you, you can build all kinds of plants that you want.</p>
+                            <p>This is your Book Collection Manager, where you can manage and track your personal library of books.</p>
                         </div>
                         <div id="tab2" class="block tab">
                             <div class="row">&nbsp;<button id="logout" class="button button-raised">Logout</button></div>
@@ -43,7 +43,7 @@
                                     <i class="material-icons">add</i>
                                 </a>
                             </div>
-                            <div id="plantList">House Plant List</div>
+                            <div id="bookList">Book List</div>
                         </div>
                     </div>
                 </main>
@@ -51,7 +51,7 @@
                     <div class="view">
                         <div class="page">
                             <div class="page-content login-screen-content">
-                                <div class="login-screen-title">House Plant</div>
+                                <div class="login-screen-title">Book Collection Manager</div>
                                 <form id="loginForm">
                                     <div class="list">
                                         <ul>
@@ -134,7 +134,7 @@
                 <form id="addItem" class="sheet-modal my-sheet list">
                     <div class="toolbar">
                         <div class="toolbar-inner block">
-                            <div class="left">Add Plant</div>
+                            <div class="left">Add Book</div>
                             <div id="closeSave" class="segmented segmented-raised">
                                 <a href="#" class="button sheet-close">Close</a>
                                 <button type="submit" class="button button-active">Save</button>
@@ -146,9 +146,9 @@
                             <li>
                                 <div class="item-content item-input">
                                     <div class="item-inner">
-                                        <label for="plantName" class="item-title item-label">Plant Name:</label>
+                                        <label for="bookTitle" class="item-title item-label">Book Title:</label>
                                         <div class="item-input-wrap">
-                                            <input id="plantName" type="text" name="plantName" placeholder="Plant name required" required="required">
+                                            <input id="bookTitle" type="text" name="bookTitle" placeholder="Enter book title" required="required">
                                         </div>
                                     </div>
                                 </div>
@@ -156,9 +156,9 @@
                             <li>
                                 <div class="item-content item-input">
                                     <div class="item-inner">
-                                        <label for="plantType" class="item-title item-label">Plant Type:</label>
+                                        <label for="bookAuthor" class="item-title item-label">Author:</label>
                                         <div class="item-input-wrap">
-                                            <input id="plantType" type="text" name="plantType" placeholder="Plant type required" required="required">
+                                            <input id="bookAuthor" type="text" name="bookAuthor" placeholder="Enter author's name" required="required">
                                         </div>
                                     </div>
                                 </div>
@@ -166,9 +166,9 @@
                             <li>
                                 <div class="item-content item-input">
                                     <div class="item-inner">
-                                        <label for="imageUrl" class="item-title item-label">Image Url:</label>
+                                        <label for="bookCoverUrl" class="item-title item-label">Cover Image URL:</label>
                                         <div class="item-input-wrap">
-                                            <input id="imageUrl" type="text" name="imageUrl" placeholder="Image URL required" required="required">
+                                            <input id="bookCoverUrl" type="text" name="bookCoverUrl" placeholder="Image URL required" required="required">
                                         </div>
                                     </div>
                                 </div>

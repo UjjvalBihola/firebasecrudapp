@@ -27,6 +27,7 @@ body {
 
 .button:hover {
     background-color: #1976d2;
+    color:#ffffff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -138,4 +139,10 @@ body {
     color: #2196f3;
     text-decoration: underline;
     cursor: pointer;
+}
+
+
+.book-purchased {
+    text-decoration: line-through;
+    color: #888;
 }
