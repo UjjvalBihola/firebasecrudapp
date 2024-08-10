@@ -2,175 +2,184 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="theme-color" content="#2196f3">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="msapplication-tap-highlight" content="no">
-  <title>House Plant Management</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./index.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#2196f3">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>House Plant Management</title>
+    <link rel="apple-touch-icon" href="img/f7-icon-square.png">
+    <link rel="icon" href="img/f7-icon.png">
+    <link rel="stylesheet" href="./index.css">
 </head>
 
-<body class="bg-gray-100">
-  <div id="app">
-    <!-- Main view -->
-    <div class="view view-main view-init ios-edges" data-url="/">
-      <div class="page">
-        <nav class="navbar bg-blue-600 p-4">
-          <div class="navbar-inner">
-            <h1 class="title text-white text-2xl font-bold">House Plant</h1>
-          </div>
-        </nav>
-        <main class="page-content p-4">
-          <!-- content goes there -->
-          <div class="tabs">
-            <div id="tab1" class="block tab tab-active">
-              <div class="flex justify-between items-center mb-4">
-                <div id="loginSignin" class="flex space-x-4">
-                  <a href="#" class="button bg-blue-600 text-white py-2 px-4 rounded" data-login-screen=".signupYes">Sign Up</a>
-                  <a href="#" class="button bg-green-600 text-white py-2 px-4 rounded" data-login-screen=".loginYes">Sign In</a>
-                </div>
-              </div>
-              <p class="text-gray-700">This is House Plant for you, you can build all kinds of plants that you want.</p>
-            </div>
-            <div id="tab2" class="block tab">
-              <div class="flex justify-end mb-4">
-                <button id="logout" class="button bg-red-600 text-white py-2 px-4 rounded">Logout</button>
-              </div>
-              <!-- Green FAB -->
-              <div class="fab fab-right-bottom fixed bottom-4 right-4">
-                <a href="#" data-sheet=".my-sheet" class="sheet-open bg-green-600 p-4 rounded-full text-white">
-                  <i class="icon f7-icons">add</i>
-                </a>
-              </div>
-              <div id="plantList" class="mt-4">House Plant List</div>
-            </div>
-          </div>
-        </main>
-        <!-- Login Screen -->
-        <div class="login-screen loginYes">
-          <div class="view">
+<body>
+    <div id="app">
+        <div class="statusbar"></div>
+        <div class="view view-main view-init ios-edges" data-url="/">
             <div class="page">
-              <div class="page-content login-screen-content p-4">
-                <div class="login-screen-title text-2xl font-bold mb-4">House Plant</div>
-                <form id="loginForm" class="space-y-4">
-                  <div class="list">
-                    <ul class="space-y-4">
-                      <li class="item-content item-input">
-                        <div class="item-inner flex flex-col">
-                          <label for="username" class="item-title item-label text-gray-700 mb-2">Username</label>
-                          <input type="text" name="username" class="border p-2 rounded" placeholder="Your email" />
-                        </div>
-                      </li>
-                      <li class="item-content item-input">
-                        <div class="item-inner flex flex-col">
-                          <label for="password" class="item-title item-label text-gray-700 mb-2">Password</label>
-                          <input type="password" name="password" class="border p-2 rounded" placeholder="Your password" />
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="list">
-                    <ul class="space-y-4">
-                      <li><button type="submit" id="signInButton" class="button bg-green-600 text-white py-2 px-4 rounded w-full">Sign In</button></li>
-                      <li><button type="button" id="signInWithGoogleButton" class="button bg-blue-600 text-white py-2 px-4 rounded w-full">Sign In with Google</button></li>
-                    </ul>
-                    <div class="block-footer mt-4">
-                      <p id="signInError" class="text-red-600"></p>
-                      <p><a class="link login-screen-close text-blue-600" href="#">Close Login Screen</a></p>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <h1 class="title sliding">House Plant</h1>
                     </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Signup Screen -->
-        <div class="login-screen signupYes">
-          <div class="view">
-            <div class="page">
-              <div class="page-content login-screen-content p-4">
-                <div class="login-screen-title text-2xl font-bold mb-4">Signup</div>
-                <form id="signUpForm" class="space-y-4">
-                  <div class="list">
-                    <ul class="space-y-4">
-                      <li class="item-content item-input">
-                        <div class="item-inner flex flex-col">
-                          <label for="username" class="item-title item-label text-gray-700 mb-2">Username</label>
-                          <input type="text" name="username" class="border p-2 rounded" placeholder="Your email" />
+                </nav>
+                <main class="page-content">
+                    <div class="tabs">
+                        <div id="tab1" class="block tab tab-active">
+                            <div class="row">&nbsp;
+                                <div id="loginSignin" class="segmented segmented-raised">
+                                    <a href="#" class="button login-screen-open" data-login-screen=".signupYes">Sign Up</a>
+                                    <a href="#" class="button button-active login-screen-open" data-login-screen=".loginYes">Sign In</a>
+                                </div>
+                            </div>
+                            <p>This is House Plant for you, you can build all kinds of plants that you want.</p>
                         </div>
-                      </li>
-                      <li class="item-content item-input">
-                        <div class="item-inner flex flex-col">
-                          <label for="password" class="item-title item-label text-gray-700 mb-2">Password</label>
-                          <input type="password" name="password" class="border p-2 rounded" placeholder="Your password" />
+                        <div id="tab2" class="block tab">
+                            <div class="row">&nbsp;<button id="logout" class="button button-raised">Logout</button></div>
+                            <div class="fab fab-right-bottom" id="addbtn">
+                                <a href="#" data-sheet=".my-sheet" class="sheet-open">
+                                    <i class="material-icons">add</i>
+                                </a>
+                            </div>
+                            <div id="plantList">House Plant List</div>
                         </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="list">
-                    <ul class="space-y-4">
-                      <li><button id="signUpButton" type="submit" class="button bg-green-600 text-white py-2 px-4 rounded w-full">Sign Up</button></li>
-                      <li><button type="button" id="signUpWithGoogleButton" class="button bg-blue-600 text-white py-2 px-4 rounded w-full">Sign Up with Google</button></li>
-                    </ul>
-                    <div class="block-footer mt-4">
-                      <p id="signUpError" class="text-red-600"></p>
-                      <p><a class="link login-screen-close text-blue-600" href="#">Close Login Screen</a></p>
                     </div>
-                  </div>
+                </main>
+                <div class="login-screen loginYes">
+                    <div class="view">
+                        <div class="page">
+                            <div class="page-content login-screen-content">
+                                <div class="login-screen-title">House Plant</div>
+                                <form id="loginForm">
+                                    <div class="list">
+                                        <ul>
+                                            <li class="item-content item-input">
+                                                <div class="item-inner">
+                                                    <div class="item-title item-label">Username</div>
+                                                    <div class="item-input-wrap">
+                                                        <input type="text" name="username" placeholder="Your email" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="item-content item-input">
+                                                <div class="item-inner">
+                                                    <div class="item-title item-label">Password</div>
+                                                    <div class="item-input-wrap">
+                                                        <input type="password" name="password" placeholder="Your password" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="list">
+                                        <ul>
+                                            <li><button type="submit" id="signInButton" class="button button-active">Sign In</button></li>
+                                            <br/>
+                                            <li><button type="button" id="signInWithGoogleButton" class="button button-active">Sign In with Google</button></li>
+                                        </ul>
+                                        <div class="block-footer">
+                                            <p id="signInError"></p>
+                                            <p><a class="link login-screen-close" href="#">Close Login Screen</a></p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-screen signupYes">
+                    <div class="view">
+                        <div class="page">
+                            <div class="page-content login-screen-content">
+                                <div class="login-screen-title">Signup</div>
+                                <form id="signUpForm">
+                                    <div class="list">
+                                        <ul>
+                                            <li class="item-content item-input">
+                                                <div class="item-inner">
+                                                    <div class="item-title item-label">Username</div>
+                                                    <div class="item-input-wrap">
+                                                        <input type="text" name="username" placeholder="Your email" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="item-content item-input">
+                                                <div class="item-inner">
+                                                    <div class="item-title item-label">Password</div>
+                                                    <div class="item-input-wrap">
+                                                        <input type="password" name="password" placeholder="Your password" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="list">
+                                        <ul>
+                                            <li><button id="signUpButton" type="submit" class="button button-active">Sign Up</button></li>
+                                            <br/>
+                                            <li><button type="button" id="signUpWithGoogleButton" class="button button-active">Sign Up with Google</button></li>
+                                        </ul>
+                                        <div class="block-footer">
+                                            <p id="signUpError"></p>
+                                            <p><a class="link login-screen-close" href="#">Close Login Screen</a></p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form id="addItem" class="sheet-modal my-sheet list">
+                    <div class="toolbar">
+                        <div class="toolbar-inner block">
+                            <div class="left">Add Plant</div>
+                            <div id="closeSave" class="segmented segmented-raised">
+                                <a href="#" class="button sheet-close">Close</a>
+                                <button type="submit" class="button button-active">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-modal-inner">
+                        <ul>
+                            <li>
+                                <div class="item-content item-input">
+                                    <div class="item-inner">
+                                        <label for="plantName" class="item-title item-label">Plant Name:</label>
+                                        <div class="item-input-wrap">
+                                            <input id="plantName" type="text" name="plantName" placeholder="Plant name required" required="required">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content item-input">
+                                    <div class="item-inner">
+                                        <label for="plantType" class="item-title item-label">Plant Type:</label>
+                                        <div class="item-input-wrap">
+                                            <input id="plantType" type="text" name="plantType" placeholder="Plant type required" required="required">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content item-input">
+                                    <div class="item-inner">
+                                        <label for="imageUrl" class="item-title item-label">Image Url:</label>
+                                        <div class="item-input-wrap">
+                                            <input id="imageUrl" type="text" name="imageUrl" placeholder="Image URL required" required="required">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </form>
-              </div>
             </div>
-          </div>
         </div>
-        <!-- Grocery drawer -->
-        <form id="addItem" class="sheet-modal my-sheet list p-4 bg-white rounded-lg">
-          <div class="toolbar bg-gray-100 p-4 rounded-t-lg">
-            <div class="toolbar-inner flex justify-between items-center">
-              <div class="left text-lg font-bold">Add Plant</div>
-              <p id="closeSave" class="segmented segmented-raised space-x-4">
-                <a href="#" class="button sheet-close bg-gray-600 text-white py-2 px-4 rounded">Close</a>
-                <button type="submit" class="button bg-green-600 text-white py-2 px-4 rounded">Save</button>
-              </p>
-            </div>
-          </div>
-          <div class="sheet-modal-inner space-y-4">
-            <ul class="space-y-4">
-              <li>
-                <div class="item-content item-input">
-                  <div class="item-inner flex flex-col">
-                    <label for="plantName" class="item-title item-label text-gray-700 mb-2">PlantName:</label>
-                    <input id="plantName" type="text" name="plantName" class="border p-2 rounded" placeholder="Plant name required" required>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="item-content item-input">
-                  <div class="item-inner flex flex-col">
-                    <label for="plantType" class="item-title item-label text-gray-700 mb-2">PlantType:</label>
-                    <input id="plantType" type="text" name="plantType" class="border p-2 rounded" placeholder="Plant type required" required>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="item-content item-input">
-                  <div class="item-inner flex flex-col">
-                    <label for="imageUrl" class="item-title item-label text-gray-700 mb-2">Image Url:</label>
-                    <input id="imageUrl" type="text" name="imageUrl" class="border p-2 rounded" placeholder="Image URL required" required>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </form>
-      </div>
     </div>
-  </div>
-  <script src="./index.js" type="module"></script>
+    <script src="./index.js" type="module"></script>
 </body>
 
 </html>

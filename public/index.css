@@ -1,8 +1,78 @@
-/* Custom styles that aren't covered by Tailwind */
+@import 'https://cdnjs.cloudflare.com/ajax/libs/framework7/5.7.10/css/framework7.bundle.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css';
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.navbar .title {
+    line-height: 2em;
+    color: #2196f3;
+    font-weight: bold;
+}
+
+#loginSignin {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.button {
+    border-radius: 25px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    background-color: #1976d2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#logout {
+    width: 8em;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    border-radius: 25px;
+    background-color: #f44336;
+    color: #ffffff;
+}
+
+#logout:hover {
+    background-color: #d32f2f;
+    color: #ffffff;
+}
+
+#map-here {
+    height: 75vh;
+    margin-top: 0.5em;
+    border-radius: 10px;
+    overflow: hidden;
+}
 
 #plant_image {
-    width:30%;
-    height: 35%;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#plantList {
+    font-size: 18px;
+    margin: 10px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-content {
+    padding: 15px;
 }
 
 .plant-purchased:after {
@@ -13,4 +83,59 @@
     right: 40%;
     border-top: 2px solid black;
     transform: translateY(-50%);
+}
+
+.fab {
+    color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    font-size: 24px;
+}
+
+.fab i {
+    font-size: 30px;
+    color: #fff;
+}
+
+
+
+.my-sheet {
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.item-input-wrap input {
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.item-input-wrap input:focus {
+    border-color: #2196f3;
+}
+
+#closeSave {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.sheet-modal .toolbar-inner {
+    justify-content: space-between;
+}
+
+.link.login-screen-close {
+    color: #2196f3;
+    text-decoration: underline;
+    cursor: pointer;
 }
